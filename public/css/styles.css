@@ -123,53 +123,53 @@ button {
 
 /** 4.0 - Order Box **/
 .order {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    height: 100%;
+    left: 0;
     position: fixed;
     top: 0;
-    left: 0;
-    background-color: rgba(255, 255, 255, 0.9);
     width: 100%;
-    height: 100%;
     z-index: 1;
-    display: flex;
-    align-items: center;
 }
 
 .order__box {
     background-color: #50d074;
-    margin: auto;
-    width: 91vw;
     border-radius: 9px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin: auto;
+    width: 91vw;
 }
 
-.order__box-title {
+.order__title {
+    color: #fff;
     font-size: 22px;
     font-weight: 700;
-    color: #fff;
     margin: 21px 0 28px 60px;
     width: 100%;
 }
 
-.order__box-row {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 26px 20px 26px;
+.order__item {
     color: #fff;
+    display: flex;
     font-size: 22px;
     font-weight: 300;
+    justify-content: space-between;
+    margin: 0 26px 20px 26px;
 }
 
-.order__box-total {
+.order__total {
     font-weight: 700;
 }
 
-.order__box-buttons {
+.order__buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.order__box-confirm-btn {
+.order__confirm {
     width: 87vw;
     height: 52px;
     margin-top: 20px;
@@ -181,7 +181,7 @@ button {
     border: none;
 }
 
-.order__box-cancel-btn {
+.order__cancel {
     border: none;
     background-color: #50d074;
     height: 52px;

@@ -1,10 +1,12 @@
-const Option = () => {
+const Option = props => {
+    const { image, name, description, price } = props;
+
     return (
         <li class="menu__option" onclick="">
-            <img class="menu__image" src="" />
-            <p class="menu__name">Omelete</p>
-            <p class="menu__description">Omelete de queijo com presunto</p>
-            <p class="menu__price">R$21,50</p>
+            <img class="menu__image" src={image} />
+            <p class="menu__name">{name}</p>
+            <p class="menu__description">{description}</p>
+            <p class="menu__price">{price}</p>
         </li>
     );
 };
