@@ -1,9 +1,6 @@
-const Button = () => {
-    return (
-        <button class="order__confirm" onclick="sendOrder();">
-            Tudo certo, pode pedir!
-        </button>
-    );
+const Button = props => {
+    const { text, style } = props;
+    return <button className={style} /*onClick={}*/>{text}</button>;
 };
 
 export default Button;

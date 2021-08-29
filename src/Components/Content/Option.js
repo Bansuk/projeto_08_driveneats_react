@@ -1,18 +1,41 @@
 import React, { useState } from "react";
+import QuantityButton from "./QuantityButton";
 
 const Option = props => {
-    const { image, name, description, price } = props;
-    const [selected, setSelected] = useState("menu__option");
+    const { image, name, description, price, alt } = props;
+    const [selected, setSelected] = useState("");
+    const [quantity, setQuantity] = useState(0);
+    const decreaseQuantity = () => {
+        setQuantity(quantity - 1);
+        if (quantity - 1 === 0) {
+            setSelected("");
+        }
+    };
+    const increaseQuantity = () => {
+        setQuantity(quantity + 1);
+    };
 
     return (
         <li
-            class={selected}
-            onClick={() => setSelected("menu__option menu__option--selected")}
+            className={`menu__option ${selected}`}
+            onClick={() => {
+                if (quantity === 0) {
+                    setSelected("menu__option--selected");
+                    increaseQuantity();
+                }
+            }}
         >
-            <img class="menu__image" src={image} />
-            <p class="menu__name">{name}</p>
-            <p class="menu__description">{description}</p>
-            <p class="menu__price">{price}</p>
+            <img className="menu__image" src={image} alt={alt} />
+            <p className="menu__name">{name}</p>
+            <p className="menu__description">{description}</p>
+            <div className="menu__bottom">
+                <p className="menu__price">{price}</p>
+                <QuantityButton
+                    quantity={quantity}
+                    decreaseQuantity={decreaseQuantity}
+                    increaseQuantity={increaseQuantity}
+                />
+            </div>
         </li>
     );
 };

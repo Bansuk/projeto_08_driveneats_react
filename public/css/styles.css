@@ -92,6 +92,25 @@ button {
     margin-bottom: 13px;
 }
 
+.menu__bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu__buttons {
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu__plus {
+    color: #32b72f;
+}
+
+.menu__minus {
+    color: #cf2b2b;
+}
+
 /** 3.0 - Footer **/
 .footer {
     align-items: center;
