@@ -93,7 +93,7 @@ const dessertOptions = [
     },
 ];
 
-const Category = ({ title, type }) => {
+const Category = ({ title, type, addOption, checkOrder }) => {
     const options =
         type === "meal"
             ? mealOptions
@@ -113,6 +113,9 @@ const Category = ({ title, type }) => {
                         price={option.price}
                         image={option.image}
                         alt={option.alt}
+                        type={type}
+                        addOption={addOption}
+                        checkOrder={checkOrder}
                     />
                 ))}
             </ul>

@@ -15,7 +15,7 @@ const categories = [
     },
 ];
 
-const Body = () => {
+const Body = ({ addOption, checkOrder }) => {
     return (
         <main>
             {categories.map((category, index) => (
@@ -23,6 +23,8 @@ const Body = () => {
                     key={index}
                     title={category.title}
                     type={category.type}
+                    addOption={addOption}
+                    checkOrder={checkOrder}
                 />
             ))}
         </main>

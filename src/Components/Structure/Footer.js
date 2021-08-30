@@ -10,10 +10,16 @@ const enabledButton = {
     style: "footer__button footer__button--enabled",
 };
 
-const Footer = () => {
+const Footer = ({ isOrderReady }) => {
     return (
         <footer className="footer">
-            <Button text={disabledButton.text} style={disabledButton.style} />
+            <Button
+                text={isOrderReady ? enabledButton.text : disabledButton.text}
+                style={
+                    isOrderReady ? enabledButton.style : disabledButton.style
+                }
+                /*onClick={isOrderReady ? console.log("a") : ""}*/
+            />
         </footer>
     );
 };

@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import QuantityButton from "./QuantityButton";
 
-const Option = props => {
-    const { image, name, description, price, alt } = props;
+const Option = ({
+    image,
+    name,
+    description,
+    price,
+    alt,
+    type,
+    addOption,
+    checkOrder,
+}) => {
     const [selected, setSelected] = useState("");
     const [quantity, setQuantity] = useState(0);
     const decreaseQuantity = () => {
@@ -13,6 +21,8 @@ const Option = props => {
     };
     const increaseQuantity = () => {
         setQuantity(quantity + 1);
+        addOption({ name, quantity, price, type });
+        checkOrder();
     };
 
     return (
